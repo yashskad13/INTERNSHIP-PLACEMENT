@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/VITlogo.png' %}"
+    />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link
+      href="{% static 'css/index.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>VIT | Placement Cell</title>
+    <!-- <script src="index.js"></script> -->
+  </head>
+
+  <body>
+    <section id="main">
+      <nav>
+        <a href="/" class="logo">
+          <img src="{% static 'images/VITlogo.png' %}" alt="VIT logo" />
+        </a>
+        <style>
+          @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+        </style>
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+
+          <li><a href="stusignin">Student</a></li>
+
+          <li><a href="comsignin">Company</a></li>
+
+          <li><a href="about">About Us</a></li>
+
+        </ul>
+      </nav>
+    </section>
+    <div class="lifeatvit">
+      <img src="{% static 'images/Life at VIT.png' %}">
+    </div>
+    <div class="flex">
+      <div class="title">
+        <h1><strong>Campus Recruiters</strong></h1>
+      </div>
+      <div class="company">
+        <a target="_blank" href="https://www.tcs.com/"
+          ><img src="{% static 'images/recruitment_logo3.png' %}"
+        /></a>
+        <a target="_blank" href="https://www.capgemini.com/in-en/"
+          ><img src="{% static 'images/recruitment_logo9.png' %}"
+        /></a>
+        <a target="_blank" href="https://www.infosys.com/"
+          ><img src="{% static 'images/recruitment_logo14.png' %}"
+        /></a>
+        <a target="_blank" href="https://aws.amazon.com/"
+          ><img src="{% static 'images/recruitment_logo16.png' %}"
+        /></a>
+        <a target="_blank" href="https://byjus.com/"
+          ><img src="{% static 'images/recruitment_logo17.png' %}"
+        /></a>
+        <a target="_blank" href="https://www.media.net/"
+          ><img src="{% static 'images/recruitment_logo21.png' %}"
+        /></a>
+        <a target="_blank" href="https://www.uniqlo.com/"
+          ><img src="{% static 'images/recruitment_logo23.png' %}"
+        /></a>
+      </div>
+    </div>
+    <div class="info">
+      <p><strong>
+        VIT prioritizes campus recruitment and in a well-defined process, trains
+        and prepares its job aspirants meticulously and ensures that a majority
+        of students are placed at reputed organizations. The institute aims at
+        providing organizations with talent who are an appropriate fit for the
+        corporate world's needs. The Training and Placement Cell, led by a
+        senior and experienced person, has a focused approach on preparing
+        students for recruitment.<br>The institute maintains strong ties with the
+        industry and arranges opportunities for student interactions through
+        industrial visits, guest lectures, internships, conferences and
+        workshops to help them to get a corporate perspective.</strong>
+      </p>
+      <img src="{% static 'images/VITauditorium.jpeg' %}" >
+    </div>
+  <footer>
+    <div class="container">
+      <div class="sec aboutus">
+        <h2>About us</h2>  
+        <p>
+          Vidyalankar Institute of Technology is an Engineering & Management Institute approved by AICTE, New Delhi and Government of Maharashtra.
+The Institute is affiliated to University of Mumbai.
+        </p>
+        <ul class="sci">
+         <li><a target="_blank" href="https://m.facebook.com/Vidyalankar.VIT/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
+         <li><a target="_blank" href="https://www.instagram.com/vit_vidyalankar/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+         <li><a target="_blank" href="https://mobile.twitter.com/VIT_Vidyalankar"><i class="fa fa-twitter" aria-hidden="true"></i></a></li> 
+         <li><a target="_blank" href="https://www.linkedin.com/authwall?trk=ripf&trkInfo=AQGAIgKUDa2pGgAAAXqGWXMYuLFodhWj7MuHYVDM-Ot3Fxijsy3Wyn7lchtyCC87PVi0Cv-qex-v2zOds6yLBke0X9uWlOQBIIfLna2rn0DaeqRx6iL_eYQhpb80xiMX-AIrVZg=&originalReferer=https://vit.edu.in/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fschool%2Fvidyalankar-institute-of-technology-mumbai"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li> 
+         <li><a target="_blank" href="https://youtube.com/channel/UCxRGJGcQw869LJ-btMhPOMA"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>    
+       </ul>
+      </div>
+      <div class="sec contact">
+        <h2>Contact Info</h2>
+        <ul class="con">
+        <li>
+          <span>
+           <i class="fa fa-map-marker" aria-hidden="true"></i>   
+          </span> 
+          <span>
+              Vidyalankar Institute of Technology,<br> Vidyalankar College Marg,<br> Wadala(E), Mumbai-400 037
+          </span> 
+        </li>
+        <li>
+          <span><i class="fa fa-phone" aria-hidden="true"></i></span>    
+          <p><a href="tel:02224161126">02224161126</p>   
+        </li>
+        <li>
+          <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          <p><a href="mailto:principal@vit.edu.in">principal@vit.edu.in</a></p>
+        </li>
+        </ul>
+      </div>
+    </div>  
+  </footer>
+  <div class="copyrighttext">
+    <p>©2021,All Rights Reserved By Vidyalankar Institute of Technology</p>  
+  </div>
+  </body>
+</html>
