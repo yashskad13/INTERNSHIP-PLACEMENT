@@ -24,7 +24,8 @@
           <div class="signup-content">
             <div class="signup-form">
               <h2 class="form-title" style="color: #0d2c44">Student SignUp</h2>
-              <form method="POST" class="register-form" id="register-form">
+              <form method="POST" class="register-form" id="register-form" action='/stusignup'>
+                {% csrf_token %}
                 <div class="form-group">
                   <label for="name"
                     ><i
@@ -37,6 +38,21 @@
                     name="name"
                     id="name"
                     placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="username"
+                    ><i
+                      class="zmdi zmdi-account fa fa-user"
+                      area-hidden="true"
+                    ></i
+                  ></label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Username"
                     required
                   />
                 </div>
@@ -65,16 +81,17 @@
                   <input
                     type="text"
                     placeholder="Branch"
-                    list="branch"
+                    name="branch"
+                    id="branch"
                     required
                   />
-                  <datalist id="branch">
+                  <!-- <datalist name="branch" id="branch">
                     <option>CMPN</option>
                     <option>INFT</option>
                     <option>EXTC</option>
                     <option>ETRX</option>
                     <option>BIOM</option>
-                  </datalist>
+                  </datalist> -->
                 </div>
                 <div class="form-group">
                   <label for="yog"
