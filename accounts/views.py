@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import studentUser
-from django.contrib import auth
+from .models import studentUser,companyUser
+from django.contrib import messages
 
 # Create your views here.
 
@@ -11,7 +11,6 @@ def index(request):
 
 
 def stusignup(request):
-    print('kuchbhi')
     if request.method == 'POST':
         yourname = request.POST['name']
         username = request.POST['username']
@@ -21,37 +20,32 @@ def stusignup(request):
         branch = request.POST['branch']
         yog = request.POST['yog']
         contact = request.POST['contact']
-        print(yourname, username, password1, password2, email, yog, contact)
 
-      #   if password1 == password2:
-      #       if studentUser.objects.filter(username=username).exists():
-      #          #  messages.info(request, 'Username is already Taken')
-      #           print('1')
-      #           return redirect('/stusignup')
-      #       elif studentUser.objects.filter(email=email).exists():
-      #           print('5')
-      #          #  messages.info(request, 'Email is already Taken')
-      #           return redirect('/stusignup')
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'Username is already Taken')
+                return redirect('/stusignup')
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, 'Email is already Taken')
+                return redirect('/stusignup')
+            else:
+                user = User.objects.create_user(email=email,
+                    username=username, password=password1)
+                suser = studentUser(username=username, password=password1, yourname=yourname,
+                            email=email, yog=yog, contact=contact, branch=branch, user=user)
 
-        print('6')
-        user = User.objects.create_user(
-            username=username, password=password1)
-        suser = studentUser(yourname=yourname,
-                            email=email,yog=yog, contact=contact, branch=branch,user=user)
-        auth.login(request,user)                    
-
-        # user.is_active = False  # Example
-        # send_email(user)
-        #  return render(request, 'confirm_template.html', {'user': user})
-        print(suser)
-        suser.save()
-        print('user created')
-        return redirect('/stusignin')
-
-          
+                # user.is_active = False  # Example
+                # send_email(user)
+                #  return render(request, 'confirm_template.html', {'user': user})
+                print(suser)
+                suser.save()
+                print('user created')
+                return redirect('/stusignin')
+        else:
+            messages.info(request, 'Password is not matching')
+            return redirect('/stusignup')
 
     else:
-        print('8')
         return render(request, 'stusignup.html')
 
 
@@ -64,7 +58,42 @@ def comsignin(request):
 
 
 def comsignup(request):
-    return render(request, 'comsignup.html')
+    if request.method == 'POST':
+        companyname = request.POST['name']
+        username = request.POST['username']
+        password1 = request.POST['pass']
+        password2 = request.POST['re_pass']
+        companyemail = request.POST['email']
+        address = request.POST['address']
+        contact = request.POST['contact']
+
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'Company Username is already Taken')
+                return redirect('/comsignup')
+            elif User.objects.filter(email=companyemail).exists():
+                messages.info(request, 'Email is already Taken')
+                return redirect('/comsignup')
+            else:
+                user = User.objects.create_user(email=companyemail,
+                    username=username, password=password1)
+                cuser = companyUser(username=username, password=password1, companyname=companyname,
+                            companyemail=companyemail, contact=contact, address=address, user=user)
+
+                # user.is_active = False  # Example
+                # send_email(user)
+                #  return render(request, 'confirm_template.html', {'user': user})
+                print(cuser)
+                cuser.save()
+                print('user created')
+                return redirect('/comsignin')
+        else:
+            messages.info(request, 'Password is not matching')
+            return redirect('/comsignup')
+
+    else:
+        return render(request, 'comsignup.html')
+
 
 
 def aboutus(request):

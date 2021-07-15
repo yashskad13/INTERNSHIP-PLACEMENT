@@ -42,6 +42,21 @@
                   />
                 </div>
                 <div class="form-group">
+                  <label for="username"
+                    ><i
+                      class="zmdi zmdi-account fa fa-user"
+                      area-hidden="true"
+                    ></i
+                  ></label>
+                  <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="Company UserName"
+                    required
+                  />
+                </div>
+                <div class="form-group">
                   <label for="email"
                     ><i
                       class="zmdi zmdi-email fa fa-envelope"
@@ -139,5 +154,12 @@
         </div>
       </section>
     </div>
+    {% for message in messages %}
+    <script>
+        window.onload = function(){
+            alert('{{message}}')
+        }
+    </script>
+    {% endfor %}
   </body>
 </html>

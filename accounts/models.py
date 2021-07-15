@@ -8,3 +8,14 @@ class studentUser(models.Model):
    contact = models.CharField(max_length=13,default='')
    user = models.OneToOneField(User, on_delete=models.CASCADE,default='')
    email = models.EmailField()
+   username = models.CharField(max_length=255,default='')
+   password = models.CharField(max_length=255,default='')
+
+class companyUser(models.Model):
+   companyname = models.CharField(max_length=255,default='')
+   address = models.CharField(max_length=255,default='')
+   contact = models.CharField(max_length=13,default='')
+   user = models.OneToOneField(User, on_delete=models.CASCADE,default='')
+   companyemail = models.EmailField()
+   username = models.CharField(max_length=255,default='')
+   password = models.CharField(max_length=255,default='')

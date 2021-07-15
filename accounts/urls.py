@@ -8,5 +8,7 @@ urlpatterns = [
         path('stusignin/stusignin',views.stusignin),
         path('comsignup',views.comsignup),
         path('comsignin',views.comsignin),
+        path('comsignup/comsignup',views.comsignup),
+        path('comsignin/comsignin',views.comsignin),
         path('about',views.aboutus),  
 ]
