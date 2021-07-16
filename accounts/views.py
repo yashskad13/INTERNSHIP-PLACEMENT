@@ -7,7 +7,10 @@ from django.contrib import messages
 
 
 def index(request):
-    return render(request, 'index.html')
+    suser = studentUser.objects.all()
+    cuser = companyUser.objects.all()
+    return render(request, 'index.html',{'suser': suser,'cuser':cuser})
+
 
 
 def stusignup(request):
@@ -129,3 +132,7 @@ def comsignup(request):
 
 def aboutus(request):
     return render(request, 'aboutus.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')

@@ -10,5 +10,6 @@ urlpatterns = [
         path('comsignin',views.comsignin),
         path('comsignup/comsignup',views.comsignup),
         path('comsignin/comsignin',views.comsignin),
+        path('logout',views.logout),
         path('about',views.aboutus),  
 ]
