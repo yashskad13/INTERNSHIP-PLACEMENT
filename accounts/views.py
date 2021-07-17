@@ -51,19 +51,32 @@ def stusignup(request):
     else:
         return render(request, 'stusignup.html')
 
+def checkstu(username):
+    suser = studentUser.objects.all()
+    for u in suser:
+        if username == u.username:
+            return True
+    return False
+
+def checkcom(username):
+    cuser = companyUser.objects.all()
+    for u in cuser:
+        if username == u.username:
+            return True
+    return False
 
 def stusignin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
         print(username, password)
+        if checkstu(username):
+            user = auth.authenticate(username=username, password=password)
+            print(user)
 
-        user = auth.authenticate(username=username, password=password)
-        print(user)
-
-        if user is not None:
-            auth.login(request, user)
-            return redirect('/dashboard')
+            if user is not None:
+                auth.login(request, user)
+                return redirect('/dashboard')
         else:
             messages.error(request, 'Invalid credentials')
             return redirect('/stusignin')
@@ -77,13 +90,12 @@ def comsignin(request):
         username = request.POST['username']
         password = request.POST['password']
         print(username, password)
-
-        user = auth.authenticate(username=username, password=password)
-        print(user)
-
-        if user is not None:
-            auth.login(request, user)
-            return redirect('dashboard/comdashboard')
+        if checkcom(username):  
+            user = auth.authenticate(username=username, password=password)
+            print(user)
+            if user is not None:
+                auth.login(request, user)
+                return redirect('dashboard/comdashboard')
         else:
             messages.error(request, 'Invalid credentials')
             return redirect('/comsignin')
@@ -131,7 +143,9 @@ def comsignup(request):
 
 
 def aboutus(request):
-    return render(request, 'aboutus.html')
+    suser = studentUser.objects.all()
+    cuser = companyUser.objects.all()
+    return render(request, 'aboutus.html',{'suser': suser,'cuser':cuser})
 
 def logout(request):
     auth.logout(request)

@@ -1,4 +1,5 @@
 {% load static %}
+{% load student %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,7 +36,7 @@
         <ul class="menu">
           <li><a href="/">Home</a></li>
           {% if user.is_authenticated %}
-            {% if "Siddhesh28" in suser.username %}
+            {% if user|is_student:suser %}
               <li><a href="dashboard">SDashboard</a></li>
             {% else %}
             {{suser.username}}
@@ -130,5 +131,45 @@
         </div>
       </div>
   </div>
+  <div class="card">
+    <div class="content">
+      <img src="{% static 'images/roshan.jpg' %}" />
+      <div class="details">
+        <p>
+          HELLO EVERYBODY, I AM 
+          <p id="name">ROSHAN MHATRE</p>
+          <p id="skill">JUNIOR WEB DEVELOPER</p>
+          Pursuing IT Engineering 2019-23 (VIT,Mumbai)
+        </p>
+         <ul class="con">
+            <li>
+                <span><i class="fa fa-calendar" aria-hidden="true"></i></span>    
+                <span> 25th February, 2002 </span>   
+              </li>
+              <li>
+      <span>
+       <i class="fa fa-map-marker" aria-hidden="true"></i>   
+      </span> 
+      <span>
+          Shanti Niketan House,TataPower,Pisavli Gaon<br> Kalyan(E), Thane-421 306
+      </span> 
+    </li>
+    <li>
+      <span><i class="fa fa-phone" aria-hidden="true"></i></span>    
+      <p><a href="tel:+919892647513">+919892647513</p>   
+    </li>
+    <li>
+      <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+      <p><a href="mailto:roshanmhatre989@gmail.com">roshanmhatre989@gmail.com</a></p>
+    </li>
+    </ul>
+    <ul class="sci">
+        <li><a target="_blank" href="https://m.facebook.com/100009895207756/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> 
+        <li><a target="_blank" href="https://www.instagram.com/mr_rdm_/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a target="_blank" href="https://github.com/RoshanMhatre"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
+       </ul>
+      </div>
+    </div>
+</div>
   </body>
 </html>

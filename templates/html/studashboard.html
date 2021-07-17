@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load student %}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -22,31 +22,31 @@
   </head>
 
 <body>
-    <section id="main">
-        <nav>
-          <a href="/" class="logo">
-            <img src="{% static 'images/VITlogo.png' %}" alt="VIT logo" />
-          </a>
-          <style>
-            @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
-          </style>
-          <ul class="menu">
-            <li><a href="/">Home</a></li>
-            {% if user.is_authenticated %}
-              {% if "Siddhesh28" in suser.username %}
-                <li><a href="dashboard">SDashboard</a></li>
-              {% else %}
-              {{suser.username}}
-                <li><a href="dashboard/comdashboard">CDashboard</a></li>
-              {% endif %}  
-            <li><a href="/logout">Logout</a></li>
-            {% else %}
-            <li><a href="stusignin">Student</a></li>
-            <li><a href="comsignin">Company</a></li>
-            {% endif %}
-            <li><a href="about">About Us</a></li>  
-          </ul>
-        </nav>
-      </section>
+  <section id="main">
+    <nav>
+      <a href="/" class="logo">
+        <img src="{% static 'images/VITlogo.png' %}" alt="VIT logo" />
+      </a>
+      <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+      </style>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        {% if user.is_authenticated %}
+          {% if user|is_student:suser %}
+            <li><a href="dashboard">SDashboard</a></li>
+          {% else %}
+          {{suser.username}}
+            <li><a href="dashboard/comdashboard">CDashboard</a></li>
+          {% endif %}  
+        <li><a href="/logout">Logout</a></li>
+        {% else %}
+        <li><a href="stusignin">Student</a></li>
+        <li><a href="comsignin">Company</a></li>
+        {% endif %}
+        <li><a href="/about">About Us</a></li>  
+      </ul>
+    </nav>
+  </section>
 </body>
 </html>
