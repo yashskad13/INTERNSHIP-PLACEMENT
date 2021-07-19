@@ -53,7 +53,7 @@
     font-size:1.1rem;
 }
 
-.sidebar-menu a.active {
+.sidebar-menu a:hover{
     background: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -222,8 +222,7 @@ main {
     border-radius: 5px;
 }
 
-.card-header,
-.card-body {
+.card-header {
     padding: 1rem;
 }
 
@@ -276,16 +275,16 @@ tr td:last-child {
     align-items: center;
 }
 
-.status-purple {
-    color: rebeccapurple;
+.status.purple {
+    background: rebeccapurple;
 }
 
-.status-pink {
-    color:deeppink;
+.status.pink {
+    background:deeppink;
 }
 
-.status-orange{
-    color:orangered;
+.status.orange{
+    background:orangered;
 }
 
 .table-responsive {
