@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import companyUser
+from accounts.models import companyUser,studentUser
 # Create your models here.
 
 class placementInfo(models.Model):
@@ -15,6 +15,10 @@ class placementInfo(models.Model):
     regform_link = models.URLField(default='')
     status = models.BooleanField(default=False)
 
+    def __str__(self):
+        return str(id)
+
+
 class internshipInfo(models.Model):
     company_name = models.ForeignKey(companyUser, default=None ,on_delete=models.CASCADE)
     stipend = models.CharField(default='', max_length=255)
@@ -29,3 +33,15 @@ class internshipInfo(models.Model):
     regform_link = models.URLField(default='')
     status = models.BooleanField(default=False)
 
+    def __str__(self):
+        return str(id)
+
+class Student_placement(models.Model):
+    student_username = models.ForeignKey(studentUser, default=None ,on_delete=models.CASCADE)
+    placement_id = models.ForeignKey(placementInfo, default=None ,on_delete=models.CASCADE)
+    status = models.BooleanField(default=False)
+
+class Student_internship(models.Model):
+    student_username = models.ForeignKey(studentUser, default=None ,on_delete=models.CASCADE)
+    internship_id = models.ForeignKey(internshipInfo, default=None ,on_delete=models.CASCADE)
+    status = models.BooleanField(default=False)

@@ -11,6 +11,9 @@ class studentUser(models.Model):
    username = models.CharField(max_length=255,default='')
    password = models.CharField(max_length=255,default='')
 
+   def __str__(self):
+        return self.username
+
 class companyUser(models.Model):
    companyname = models.CharField(max_length=255,default='')
    address = models.CharField(max_length=255,default='')

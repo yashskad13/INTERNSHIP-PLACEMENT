@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from accounts.models import studentUser,companyUser
-
 # Create your views here.
+
 
 def studashboard(request):
     suser = studentUser.objects.all()
