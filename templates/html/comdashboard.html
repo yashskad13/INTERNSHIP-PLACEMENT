@@ -33,7 +33,7 @@
             >
           </li>
           <li>
-            <a href=""
+            <a href="#pro" id="profile"
               ><span class="las la-users"></span> <span>Profile</span></a
             >
           </li>
@@ -53,7 +53,7 @@
             <a href=""><span class="las la-receipt"></span> <span>All</span></a>
           </li>
           <li>
-            <a href=""
+            <a href="/logout"
               ><span class="las la-user-circle"></span> <span>Logout</span></a
             >
           </li>
@@ -86,7 +86,7 @@
         </div>
       </header>
 
-      <main>
+      <main id="dashboard">
         <div class="cards">
           <div class="card-single">
             <div>
@@ -195,7 +195,7 @@
               <div class="card-body">
                 <div class="customer">
                   <div class="info">
-                    <img src="img/2.jpg" width="40px" height="40px" alt="" />
+                    <img src="" width="40px" height="40px" alt="" />
                     <div>
                       <h4>Lewis S. Cunningham</h4>
                       <small>CEO Excerpt</small>
@@ -210,7 +210,7 @@
 
                 <div class="customer">
                   <div class="info">
-                    <img src="img/2.jpg" width="40px" height="40px" alt="" />
+                    <img src="" width="40px" height="40px" alt="" />
                     <div>
                       <h4>Lewis S. Cunningham</h4>
                       <small>CEO Excerpt</small>
@@ -225,7 +225,7 @@
 
                 <div class="customer">
                   <div class="info">
-                    <img src="img/2.jpg" width="40px" height="40px" alt="" />
+                    <img src="" width="40px" height="40px" alt="" />
                     <div>
                       <h4>Lewis S. Cunningham</h4>
                       <small>CEO Excerpt</small>
@@ -240,7 +240,7 @@
 
                 <div class="customer">
                   <div class="info">
-                    <img src="img/2.jpg" width="40px" height="40px" alt="" />
+                    <img src="" width="40px" height="40px" alt="" />
                     <div>
                       <h4>Lewis S. Cunningham</h4>
                       <small>CEO Excerpt</small>
@@ -257,6 +257,22 @@
           </div>
         </div>
       </main>
+      <div class="profile" id="pro">
+        You are in profile
+      </div>
     </div>
+    <script>
+      let dashboard = document.getElementById("dashboard");
+      let profile = document.getElementById("profile");
+      console.log(dashboard);
+      console.log(profile);
+      // let internship = document.getElementById('internship');
+      // let placement = document.getElementById('placement');
+      // let all = document.getElementById('all');
+      profile.addEventListener("click",() => {
+        console.log("dashboard clicked");
+        dashboard.style.display = "none";
+      });
+    </script>
   </body>
 </html>
