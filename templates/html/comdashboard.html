@@ -1,3 +1,4 @@
+{% extends "base.html" %} 
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -16,263 +17,176 @@
     <link rel="stylesheet" href="{% static 'css/comdashboard.css' %}" />
   </head>
   <body>
-    <input type="checkbox" id="nav-toggle" />
-    <div class="sidebar">
-      <div class="sidebar-brand">
-        <h2>
-          <span class="las la-burn"></span>
-          <span>VIT, Mumbai</span>
-        </h2>
-      </div>
-
-      <div class="sidebar-menu">
-        <ul>
-          <li>
-            <a href="" class="active"
-              ><span class="las la-igloo"></span> <span>Dashboard</span></a
-            >
-          </li>
-          <li>
-            <a href="#pro" id="profile"
-              ><span class="las la-users"></span> <span>Profile</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><span class="las la-clipboard-list"></span>
-              <span>Placements</span></a
-            >
-          </li>
-          <li>
-            <a href=""
-              ><span class="las la-shopping-bag"></span>
-              <span>Internships</span></a
-            >
-          </li>
-          <li>
-            <a href=""><span class="las la-receipt"></span> <span>All</span></a>
-          </li>
-          <li>
-            <a href="/logout"
-              ><span class="las la-user-circle"></span> <span>Logout</span></a
-            >
-          </li>
-        </ul>
-      </div>
-    </div>
-
+    {% block content %}
     <div class="main-content">
-      <header>
-        <h2>
-          <label for="nav-toggle">
-            <span class="las la-bars"></span>
-          </label>
-          Dashboard
-        </h2>
-        <div class="search-wrapper">
-          <span class="las la-search"></span>
-          <input type="search" placeholder="Search here" />
-        </div>
-        <div class="user-wrapper">
-          <img
-            src="{% static 'images/VITlogo.png' %}"
-            width="40px"
-            height="40px"
-            alt=""
-          />
+    <main id="dashboard">
+      <div class="cards">
+        <div class="card-single">
           <div>
-            <h4>Hi, {{user.username}}</h4>
+            <h1>54</h1>
+            <span>Customers</span>
           </div>
-        </div>
-      </header>
-
-      <main id="dashboard">
-        <div class="cards">
-          <div class="card-single">
-            <div>
-              <h1>54</h1>
-              <span>Customers</span>
-            </div>
-            <div>
-              <span class="las la-users"> </span>
-            </div>
-          </div>
-
-          <div class="card-single">
-            <div>
-              <h1>79</h1>
-              <span>Projects</span>
-            </div>
-            <div>
-              <span class="las la-clipboard-list"> </span>
-            </div>
-          </div>
-
-          <div class="card-single">
-            <div>
-              <h1>124</h1>
-              <span>Orders</span>
-            </div>
-            <div>
-              <span class="las la-shopping-bag"> </span>
-            </div>
-          </div>
-
-          <div class="card-single">
-            <div>
-              <h1>$69k</h1>
-              <span>Income</span>
-            </div>
-            <div>
-              <span class="lab la-google-wallet"> </span>
-            </div>
+          <div>
+            <span class="las la-users"> </span>
           </div>
         </div>
 
-        <div class="recent-grid">
-          <div class="projects">
-            <div class="card">
-              <div class="card-header">
-                <h3>Recent Projects</h3>
-
-                <button>
-                  See all <span class="las la-arrow-right"> </span>
-                </button>
-              </div>
-
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table width="100%">
-                    <thead>
-                      <tr>
-                        <td>Project Title</td>
-                        <td>Department</td>
-                        <td>Status</td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>UI/UX Design</td>
-                        <td>UI Team</td>
-                        <td>
-                          <span class="status purple"></span>
-                          review
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Web Development</td>
-                        <td>Frontend</td>
-                        <td>
-                          <span class="status pink"></span>
-                          in progress
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Ushop app</td>
-                        <td>Mobile Team</td>
-                        <td>
-                          <span class="status orange"></span>
-                          pending
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+        <div class="card-single">
+          <div>
+            <h1>79</h1>
+            <span>Projects</span>
           </div>
-
-          <div class="customers">
-            <div class="card">
-              <div class="card-header">
-                <h3>New Customer</h3>
-
-                <button>
-                  See all <span class="las la-arrow-right"> </span>
-                </button>
-              </div>
-
-              <div class="card-body">
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div>
+            <span class="las la-clipboard-list"> </span>
           </div>
         </div>
-      </main>
-      <div class="profile" id="pro">
-        You are in profile
+
+        <div class="card-single">
+          <div>
+            <h1>124</h1>
+            <span>Orders</span>
+          </div>
+          <div>
+            <span class="las la-shopping-bag"> </span>
+          </div>
+        </div>
+
+        <div class="card-single">
+          <div>
+            <h1>$69k</h1>
+            <span>Income</span>
+          </div>
+          <div>
+            <span class="lab la-google-wallet"> </span>
+          </div>
+        </div>
       </div>
-    </div>
-    <script>
-      let dashboard = document.getElementById("dashboard");
-      let profile = document.getElementById("profile");
-      console.log(dashboard);
-      console.log(profile);
-      // let internship = document.getElementById('internship');
-      // let placement = document.getElementById('placement');
-      // let all = document.getElementById('all');
-      profile.addEventListener("click",() => {
-        console.log("dashboard clicked");
-        dashboard.style.display = "none";
-      });
-    </script>
+
+      <div class="recent-grid">
+        <div class="projects">
+          <div class="card">
+            <div class="card-header">
+              <h3>Recent Projects</h3>
+
+              <button>See all <span class="las la-arrow-right"> </span></button>
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table width="100%">
+                  <thead>
+                    <tr>
+                      <td>Project Title</td>
+                      <td>Department</td>
+                      <td>Status</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>UI/UX Design</td>
+                      <td>UI Team</td>
+                      <td>
+                        <span class="status purple"></span>
+                        review
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Web Development</td>
+                      <td>Frontend</td>
+                      <td>
+                        <span class="status pink"></span>
+                        in progress
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ushop app</td>
+                      <td>Mobile Team</td>
+                      <td>
+                        <span class="status orange"></span>
+                        pending
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="customers">
+          <div class="card">
+            <div class="card-header">
+              <h3>New Customer</h3>
+
+              <button>See all <span class="las la-arrow-right"> </span></button>
+            </div>
+
+            <div class="card-body">
+              <div class="customer">
+                <div class="info">
+                  <img src="" width="40px" height="40px" alt="" />
+                  <div>
+                    <h4>Lewis S. Cunningham</h4>
+                    <small>CEO Excerpt</small>
+                  </div>
+                </div>
+                <div class="contact">
+                  <span class="las la-user-circle"></span>
+                  <span class="las la-comment"></span>
+                  <span class="las la-phone"></span>
+                </div>
+              </div>
+
+              <div class="customer">
+                <div class="info">
+                  <img src="" width="40px" height="40px" alt="" />
+                  <div>
+                    <h4>Lewis S. Cunningham</h4>
+                    <small>CEO Excerpt</small>
+                  </div>
+                </div>
+                <div class="contact">
+                  <span class="las la-user-circle"></span>
+                  <span class="las la-comment"></span>
+                  <span class="las la-phone"></span>
+                </div>
+              </div>
+
+              <div class="customer">
+                <div class="info">
+                  <img src="" width="40px" height="40px" alt="" />
+                  <div>
+                    <h4>Lewis S. Cunningham</h4>
+                    <small>CEO Excerpt</small>
+                  </div>
+                </div>
+                <div class="contact">
+                  <span class="las la-user-circle"></span>
+                  <span class="las la-comment"></span>
+                  <span class="las la-phone"></span>
+                </div>
+              </div>
+
+              <div class="customer">
+                <div class="info">
+                  <img src="" width="40px" height="40px" alt="" />
+                  <div>
+                    <h4>Lewis S. Cunningham</h4>
+                    <small>CEO Excerpt</small>
+                  </div>
+                </div>
+                <div class="contact">
+                  <span class="las la-user-circle"></span>
+                  <span class="las la-comment"></span>
+                  <span class="las la-phone"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+    {% endblock %}
   </body>
 </html>
