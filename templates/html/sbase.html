@@ -10,14 +10,14 @@
       type="image/png"
       href="{% static 'images/VITlogo.png' %}"
     />
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
     <link
-      href="{% static 'css/comdashboard.css' %}"
+      href="{% static 'css/studashboard.css' %}"
       rel="stylesheet"
       type="text/css"
     />
@@ -38,29 +38,29 @@
       <div class="sidebar-menu">
         <ul>
           <li>
-            <a href="comdashboard" class="active"
+            <a href="/dashboard" class="active"
               ><span class="las la-igloo"></span> <span>Dashboard</span></a
             >
           </li>
           <li>
-            <a href="comprofile" id="profile"
+            <a href="stuprofile" id="profile"
               ><span class="las la-users"></span> <span>Profile</span></a
             >
           </li>
           <li>
-            <a href="complacement"
+            <a href="stuplacement"
               ><span class="las la-clipboard-list"></span>
               <span>Placements</span></a
             >
           </li>
           <li>
-            <a href="cominternship"
+            <a href="stuinternship"
               ><span class="las la-industry"></span>
               <span>Internships</span></a
             >
           </li>
           <li>
-            <a href="comall"><span class="las la-layer-group"></span> <span>All</span></a>
+            <a href="stuall"><span class="las la-layer-group"></span> <span>All</span></a>
           </li>
           <li>
             <a href="/logout"

@@ -1,0 +1,42 @@
+{% extends "sbase.html" %}
+{% load static %}
+{% load student %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/VITlogo.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="{% static 'css/profile.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>VIT | Placement Cell</title>
+    <!-- <script src="index.js"></script> -->
+  </head>
+<body>
+    {% block content %}
+    <main>
+        <div class="main-content">
+            {{ user.username|student_yourname:suser }}
+            {{user.username}}
+            {{ user.username|email:suser }}
+            {{ user.username|student_branch:suser }}
+            {{ user.username|yog:suser }}
+            {{ user.username|contact:suser }}
+        </div>
+    </main>
+    {% endblock %}
+</body>
+</html>
