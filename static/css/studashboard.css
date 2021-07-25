@@ -589,3 +589,11 @@ tr td:last-child {
 .lf-phone {
   margin-right: 5em;
 }
+
+.right-details :not(h2) {
+  color: grey;
+}
+
+.right-details h4 {
+  margin-top: 5px;
+}
