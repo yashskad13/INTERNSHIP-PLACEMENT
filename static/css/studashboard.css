@@ -597,3 +597,24 @@ tr td:last-child {
 .right-details h4 {
   margin-top: 5px;
 }
+
+.form-submit {
+  /* display: inline-block; */
+  background: #fff;
+  color: #0d2c44;
+  border: 1px solid #0d2c44;
+  width: auto;
+  padding: 15px 39px;
+  border-radius: 25px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.form-submit:hover {
+  background: #0d2c44;
+  color: #fff;
+  font-size: 1.1em;
+  transition: all ease 0.05s;
+  font-weight: bold;
+}

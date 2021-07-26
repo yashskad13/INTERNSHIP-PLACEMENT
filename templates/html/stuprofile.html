@@ -32,7 +32,11 @@
             {{ user.username|yog:suser }} -->
     <div class="wrapper">
       <div class="left">
-        <img src="https://i.imgur.com/cMy8V5j.png" alt="user" width="100" />
+        <img
+          src="{% static 'images/user_profile1.png' %}"
+          alt="user"
+          width="100"
+        />
         <h4>{{ user.username|student_yourname:suser }}</h4>
         <p>@ {{ user.username }}</p>
       </div>
@@ -49,19 +53,25 @@
             <h4>{{ user.username|contact:suser }}</h4>
           </div>
         </div>
-        <hr>
+        <br /><br />
         <h1>EDUCATION DETAILS</h1>
-        <hr>
+        <hr />
         <div class="pd-info">
           <div class="right-details">
             <h2>Branch</h2>
             <h4>{{ user.username|student_branch:suser }}</h4>
           </div>
           <div class="right-details">
-            <h2 class="lf-phone">YearOfGraduation</h2>
+            <h2 class="lf-phone" style="margin-right: 5px">
+              Year Of Graduation
+            </h2>
             <h4>{{ user.username|yog:suser }}</h4>
           </div>
         </div>
+        <!-- <div class="pd-info">
+          <button class="form-submit">Edit</button>
+          <a href="#" type="submit" class="form-submit">Save</a>
+        </div> -->
       </div>
     </div>
     <!-- </div> -->
