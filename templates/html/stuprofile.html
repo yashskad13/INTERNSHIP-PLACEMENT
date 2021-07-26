@@ -49,6 +49,19 @@
             <h4>{{ user.username|contact:suser }}</h4>
           </div>
         </div>
+        <hr>
+        <h1>EDUCATION DETAILS</h1>
+        <hr>
+        <div class="pd-info">
+          <div class="right-details">
+            <h2>Branch</h2>
+            <h4>{{ user.username|student_branch:suser }}</h4>
+          </div>
+          <div class="right-details">
+            <h2 class="lf-phone">YearOfGraduation</h2>
+            <h4>{{ user.username|yog:suser }}</h4>
+          </div>
+        </div>
       </div>
     </div>
     <!-- </div> -->
