@@ -26,5 +26,12 @@ class companyUser(models.Model):
     username = models.CharField(max_length=255, default='')
     password = models.CharField(max_length=255, default='')
 
+    @staticmethod
+    def comuser(ids):
+        if ids:
+            return companyUser.objects.filter(id__in=ids)
+        else:
+            return companyUser.objects.all()
+    
     def __str__(self):
         return self.username

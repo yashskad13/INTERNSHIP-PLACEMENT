@@ -17,6 +17,13 @@ class placementInfo(models.Model):
     regform_link = models.URLField(default='')
     status = models.BooleanField(default=False)
 
+    @staticmethod
+    def placement_by_id(ids):
+        if ids:
+            return placementInfo.objects.filter(company_username=ids)
+        else:
+            return placementInfo.objects.all()
+    
     def __str__(self):
         return str(self.id)
 
@@ -54,3 +61,5 @@ class Student_internship(models.Model):
     internship_id = models.ForeignKey(
         internshipInfo, default=None, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
+
+

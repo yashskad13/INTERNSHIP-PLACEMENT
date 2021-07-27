@@ -65,3 +65,11 @@ def company_email(username, cuser):
     for u in cuser:
         if(u.username == username):
             return u.companyemail
+
+@register.filter(name="complacement")
+def complacement(email, pinfo):
+    for p in pinfo:
+        print(p,pinfo)
+        if(email == p.company_email):
+            print("Hi")
+            return p
