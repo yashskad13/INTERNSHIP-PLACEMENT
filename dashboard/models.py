@@ -23,7 +23,7 @@ class placementInfo(models.Model):
             return placementInfo.objects.filter(company_username=ids)
         else:
             return placementInfo.objects.all()
-    
+
     def __str__(self):
         return str(self.id)
 
@@ -46,6 +46,13 @@ class internshipInfo(models.Model):
     def __str__(self):
         return str(self.id)
 
+    @staticmethod
+    def internship_by_id(ids):
+        if ids:
+            return internshipInfo.objects.filter(company_username=ids)
+        else:
+            return internshipInfo.objects.all()
+
 
 class Student_placement(models.Model):
     student_username = models.ForeignKey(
@@ -61,5 +68,3 @@ class Student_internship(models.Model):
     internship_id = models.ForeignKey(
         internshipInfo, default=None, on_delete=models.CASCADE)
     status = models.BooleanField(default=False)
-
-

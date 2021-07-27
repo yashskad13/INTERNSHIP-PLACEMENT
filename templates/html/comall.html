@@ -1,34 +1,53 @@
-{% extends "base.html" %}
-{% load static %}
-{% load student %}
+{% extends "base.html" %} {% load static %} {% load student %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="{% static 'images/VITlogo.png' %}"
-        />
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-    
-        <link
-          href="{% static 'css/comdashboard.css' %}"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <title>VIT | Placement Cell</title>
-        <!-- <script src="index.js"></script> -->
-      </head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/VITlogo.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="{% static 'css/comdashboard.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>VIT | Placement Cell</title>
+    <!-- <script src="index.js"></script> -->
+  </head>
+  <body>
     {% block content %}
-    <div class='wrapper'>
+    <div class="wrapper">
+      <div class="image-field">
+        <div class="com-img">
+          <img src="{% static 'images/roshan.jpg' %}" alt="Company Image" />
+        </div>
+        <div class="com-info">
+          <h1>this is company</h1>
+          <p>Web development</p>
+        </div>
+      </div>
     </div>
     {% endblock %}
-</body>
+  </body>
 </html>
+<!-- {% for p in pObj %} {{p.company_username}} {{p.package}} {{p.domain}}
+      {{p.cgpa_req}} {{p.backlog}} {{p.company_email}} {{p.company_phone}}
+      {{p.company_website}} {{p.regform_link}} {{p.status}}
+      <img src="{{ p.comimg.url }}" alt="Company Image" />
+      {% endfor %}
+      <hr />
+      <hr />
+      {% for i in iObj %} {{i.company_username}} {{i.stipend}} {{i.domain}}
+      {{i.cgpa_req}} {{i.workduration}} {{i.modeofwork}} {{i.company_email}}
+      {{i.company_phone}} {{i.company_website}} {{i.regform_link}} {{i.status}}
+      <img src="{{ i.comimg.url }}" alt="Company Image" />
+      {% endfor%} -->

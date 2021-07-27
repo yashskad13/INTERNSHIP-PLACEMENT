@@ -29,9 +29,9 @@ class companyUser(models.Model):
     @staticmethod
     def comuser(ids):
         if ids:
-            return companyUser.objects.filter(id__in=ids)
+            return companyUser.objects.filter(user=ids)
         else:
             return companyUser.objects.all()
-    
+
     def __str__(self):
         return self.username

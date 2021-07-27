@@ -132,5 +132,5 @@ STATICFILES_DIRS = [
     '/var/www/static/',
 ]
 
-MEDIA_URL = "/images/"
+MEDIA_URL = "/Images/"
 MEDIA_ROOT = BASE_DIR
