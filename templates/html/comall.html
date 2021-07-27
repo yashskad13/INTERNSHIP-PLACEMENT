@@ -14,27 +14,28 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <link
-      href="{% static 'css/comdashboard.css' %}"
-      rel="stylesheet"
-      type="text/css"
-    />
     <title>VIT | Placement Cell</title>
     <!-- <script src="index.js"></script> -->
   </head>
   <body>
     {% block content %}
-    <div class="wrapper">
-      <div class="image-field">
-        <div class="com-img">
-          <img src="{% static 'images/roshan.jpg' %}" alt="Company Image" />
-        </div>
-        <div class="com-info">
-          <h1>this is company</h1>
-          <p>Web development</p>
+    <div class="item">
+      {% for i in iObj %}
+      <div class="wrapper-all">
+        <div class="image-field">
+          <div class="com-img">
+            <img src="" alt="Company Image" />
+          </div>
+          <div class="com-info">
+            <h1>{{com_name}}</h1>
+            <p>{{i.domain}}</p>
+          </div>
+          <div class="card-type">
+            <p>INTERNSHIP</p>
+          </div>
         </div>
       </div>
+      {% endfor %}
     </div>
     {% endblock %}
   </body>

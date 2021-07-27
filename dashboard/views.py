@@ -48,10 +48,13 @@ def cominternship(request):
 def comall(request):
     ids = request.user.id
     print(ids)
+    com_name = companyUser.objects.only('companyname').get(
+        username=request.user.username).companyname
     id = companyUser.objects.only('id').get(username=request.user.username).id
     print(id)
+    print(com_name)
     pObj = placementInfo.placement_by_id(id)
     iObj = internshipInfo.internship_by_id(id)
     print(pObj)
     print(iObj)
-    return render(request, 'comall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj})
+    return render(request, 'comall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj, 'com_name': com_name})

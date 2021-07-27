@@ -38,10 +38,10 @@
           <li><a href="/">Home</a></li>
           {% if user.is_authenticated %}
             {% if user|is_student:suser %}
-              <li><a href="dashboard">SDashboard</a></li>
+              <li><a href="dashboard">Dashboard</a></li>
             {% else %}
             {{suser.username}}
-              <li><a href="dashboard/comdashboard">CDashboard</a></li>
+              <li><a href="dashboard/comdashboard">Dashboard</a></li>
             {% endif %}  
           <li><a href="logout">Logout</a></li>
           {% else %}
