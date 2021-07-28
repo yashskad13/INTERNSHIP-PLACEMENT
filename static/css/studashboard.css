@@ -602,10 +602,10 @@ tr td:last-child {
 
 .all-item {
   position: absolute;
-  display: flex;
-  top: 40%;
-  left: 60%;
-  transform: translate(-50%, -50%);
+  top: 20%;
+  left: 37%;
+  width: 100%;
+  height: 100%;
 }
 
 .image-field {
@@ -620,15 +620,11 @@ tr td:last-child {
 }
 
 .com-group {
-  /* position: absolute; */
-  /* top: 40%;
-  left: 60%;
-  transform: translate(-50%, -50%); */
   width: 50%;
   height: 45%;
-  display: flex;
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.4);
   border-radius: 1.1em;
+  margin-bottom: 3em;
 }
 
 .com-img {
@@ -639,6 +635,7 @@ tr td:last-child {
   background-color: #fff;
   border-radius: 5%;
   margin-left: 2em;
+  margin-right: 1.2em;
 }
 
 .com-img img {
@@ -648,8 +645,12 @@ tr td:last-child {
 }
 
 .com-info {
-  margin-left: 2em;
+  width: 50%;
+  height: 45%;
+  display: flex;
+  flex-direction: column;
   color: #fff;
+  border-radius: 1.1em;
 }
 
 .card-type {

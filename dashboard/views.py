@@ -18,15 +18,21 @@ def stuprofile(request):
 
 
 def stuplacement(request):
-    return render(request, 'stuplacement.html', {'suser': suser, 'cuser': cuser, 'iinfo': iinfo, 'pinfo': pinfo})
+    return render(request, 'stuplacement.html', {'suser': suser, 'cuser': cuser})
 
 
 def stuinternship(request):
-    return render(request, 'stuinternship.html', {'suser': suser, 'cuser': cuser, 'iinfo': iinfo, 'pinfo': pinfo})
+    return render(request, 'stuinternship.html', {'suser': suser, 'cuser': cuser})
 
 
 def stuall(request):
-    return render(request, 'stuall.html', {'suser': suser, 'cuser': cuser, 'iinfo': iinfo, 'pinfo': pinfo})
+    ids = request.user.id
+    com_name = companyUser.objects.only('companyname').get(
+        username=request.user.username).companyname
+    id = companyUser.objects.only('id').get(username=request.user.username).id
+    pObj = placementInfo.placement_by_id(id)
+    iObj = internshipInfo.internship_by_id(id)
+    return render(request, 'stuall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj, 'com_name': com_name})
 
 
 def comdashboard(request):
@@ -38,23 +44,18 @@ def comprofile(request):
 
 
 def complacement(request):
-    return render(request, 'complacement.html', {'suser': suser, 'cuser': cuser, 'iinfo': iinfo, 'pinfo': pinfo})
+    return render(request, 'complacement.html', {'suser': suser, 'cuser': cuser})
 
 
 def cominternship(request):
-    return render(request, 'cominternship.html', {'suser': suser, 'cuser': cuser, 'iinfo': iinfo, 'pinfo': pinfo})
+    return render(request, 'cominternship.html', {'suser': suser, 'cuser': cuser})
 
 
 def comall(request):
     ids = request.user.id
-    print(ids)
     com_name = companyUser.objects.only('companyname').get(
         username=request.user.username).companyname
     id = companyUser.objects.only('id').get(username=request.user.username).id
-    print(id)
-    print(com_name)
     pObj = placementInfo.placement_by_id(id)
     iObj = internshipInfo.internship_by_id(id)
-    print(pObj)
-    print(iObj)
     return render(request, 'comall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj, 'com_name': com_name})

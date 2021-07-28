@@ -6,6 +6,7 @@ from accounts.models import companyUser, studentUser
 class placementInfo(models.Model):
     company_username = models.ForeignKey(
         companyUser, default=None, on_delete=models.CASCADE)
+    company_name = models.CharField(default='', max_length=255)
     package = models.CharField(default='', max_length=255)
     domain = models.CharField(max_length=255, default='')
     cgpa_req = models.FloatField(default=0)
@@ -31,6 +32,7 @@ class placementInfo(models.Model):
 class internshipInfo(models.Model):
     company_username = models.ForeignKey(
         companyUser, default=None, on_delete=models.CASCADE)
+    company_name = models.CharField(default='', max_length=255)
     stipend = models.CharField(default='', max_length=255)
     domain = models.CharField(max_length=255, default='')
     cgpa_req = models.FloatField(default=0)

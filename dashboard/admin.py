@@ -4,7 +4,7 @@ from .models import placementInfo, internshipInfo, Student_placement, Student_in
 
 
 class PlacementAdmin(admin.ModelAdmin):
-    list_display = ('id', 'company_username', 'package', 'domain', 'cgpa_req', 'backlog', 'comimg',
+    list_display = ('id', 'company_username', 'company_name', 'package', 'domain', 'cgpa_req', 'backlog', 'comimg',
                     'company_email', 'company_phone', 'company_website', 'regform_link', 'status')
 
 
@@ -12,7 +12,7 @@ admin.site.register(placementInfo, PlacementAdmin)
 
 
 class InternshipAdmin(admin.ModelAdmin):
-    list_display = ('id', 'company_username', 'stipend', 'domain', 'cgpa_req', 'workduration', 'modeofwork',
+    list_display = ('id', 'company_username', 'company_name', 'stipend', 'domain', 'cgpa_req', 'workduration', 'modeofwork',
                     'comimg', 'company_email', 'company_phone', 'company_website', 'regform_link', 'status')
 
 

@@ -1,32 +1,82 @@
-{% extends "sbase.html" %}
-{% load static %}
+{% extends "sbase.html" %} {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="icon"
-          type="image/png"
-          href="{% static 'images/VITlogo.png' %}"
-        />
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-    
-        <link
-          href="{% static 'css/studashboard.css' %}"
-          rel="stylesheet"
-          type="text/css"
-        />
-        <title>VIT | Placement Cell</title>
-        <!-- <script src="index.js"></script> -->
-      </head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="{% static 'images/VITlogo.png' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="{% static 'css/studashboard.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>VIT | Placement Cell</title>
+    <!-- <script src="index.js"></script> -->
+  </head>
+  <body>
     {% block content %}
-    you are in all
+
+    <div class="all-item">
+      {% for i in iObj %} {% if i.status %}
+      <div class="com-group">
+        <div class="image-field">
+          <div class="com-img">
+            <img
+              src="{% static 'images/recruitment_logo3.png' %}"
+              alt="Company Image"
+            />
+          </div>
+          <div class="com-info">
+            <h1>{{com_name}}</h1>
+            <p>{{i.domain}}</p>
+          </div>
+          <div class="card-type">
+            <p>INTERNSHIP</p>
+          </div>
+        </div>
+        <p>
+          This is in the white spceed Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
+          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
+          deserunt, nemo eveniet est!
+        </p>
+      </div>
+      {% endif %} {% endfor %} {% for p in pObj %} {% if p.status %}
+      <div class="com-group">
+        <div class="image-field">
+          <div class="com-img">
+            <img
+              src="{% static 'images/recruitment_logo3.png' %}"
+              alt="Company Image"
+            />
+          </div>
+          <div class="com-info">
+            <h1>{{com_name}}</h1>
+            <p>{{p.domain}}</p>
+          </div>
+          <div class="card-type">
+            <p>PLACEMENT</p>
+          </div>
+        </div>
+        <p>
+          This is in the white spceed Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
+          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
+          deserunt, nemo eveniet est!
+        </p>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
     {% endblock %}
-</body>
+  </body>
 </html>
