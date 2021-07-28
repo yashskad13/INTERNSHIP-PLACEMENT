@@ -32,12 +32,12 @@
         <div class="image-field">
           <div class="com-img">
             <img
-              src="{% static 'images/recruitment_logo3.png' %}"
+              src="{{i.comimg.url}}"
               alt="Company Image"
             />
           </div>
           <div class="com-info">
-            <h1>{{com_name}}</h1>
+            <h1>{{i.company_name}}</h1>
             <p>{{i.domain}}</p>
           </div>
           <div class="card-type">
@@ -56,12 +56,12 @@
         <div class="image-field">
           <div class="com-img">
             <img
-              src="{% static 'images/recruitment_logo3.png' %}"
+              src="{{p.comimg.url}}"
               alt="Company Image"
             />
           </div>
           <div class="com-info">
-            <h1>{{com_name}}</h1>
+            <h1>{{p.company_name}}</h1>
             <p>{{p.domain}}</p>
           </div>
           <div class="card-type">

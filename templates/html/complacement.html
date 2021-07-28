@@ -26,7 +26,30 @@
       </head>
 <body>
     {% block content %}
-    you are in placement
+    <div class="all-item">
+      {% for p in pObj %} {% if p.status %}
+      <div class="com-group">
+        <div class="image-field">
+          <div class="com-img">
+            <img src="{{ p.comimg.url }}" alt="Company Image" />
+          </div>
+          <div class="com-info">
+            <h1>{{p.company_name}}</h1>
+            <p>{{p.domain}}</p>
+          </div>
+          <div class="card-type">
+            <p>PLACEMENT</p>
+          </div>
+        </div>
+        <p>
+          This is in the white spceed Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
+          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
+          deserunt, nemo eveniet est!
+        </p>
+      </div>
+      {% endif %} {% endfor %}
+    </div>
     {% endblock %}
 </body>
 </html>

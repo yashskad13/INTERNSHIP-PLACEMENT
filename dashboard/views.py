@@ -18,21 +18,24 @@ def stuprofile(request):
 
 
 def stuplacement(request):
-    return render(request, 'stuplacement.html', {'suser': suser, 'cuser': cuser})
+    pObj = placementInfo.objects.all().order_by('company_name','-pk')
+    return render(request, 'stuplacement.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj})
 
 
 def stuinternship(request):
-    return render(request, 'stuinternship.html', {'suser': suser, 'cuser': cuser})
+    iObj = internshipInfo.objects.all().order_by('company_name','-pk')
+    return render(request, 'stuinternship.html', {'suser': suser, 'cuser': cuser, 'iObj': iObj})
 
 
 def stuall(request):
-    ids = request.user.id
-    com_name = companyUser.objects.only('companyname').get(
-        username=request.user.username).companyname
-    id = companyUser.objects.only('id').get(username=request.user.username).id
-    pObj = placementInfo.placement_by_id(id)
-    iObj = internshipInfo.internship_by_id(id)
-    return render(request, 'stuall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj, 'com_name': com_name})
+    # ids = request.user.id
+    # com_name = companyUser.objects.only('companyname').get(
+    #     username=request.user.username).companyname
+    # id = companyUser.objects.only('id').get(username=request.user.username).id
+    pObj = placementInfo.objects.all().order_by('company_name','-pk')
+    iObj = internshipInfo.objects.all().order_by('company_name','-pk')
+
+    return render(request, 'stuall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj})
 
 
 def comdashboard(request):
@@ -44,11 +47,21 @@ def comprofile(request):
 
 
 def complacement(request):
-    return render(request, 'complacement.html', {'suser': suser, 'cuser': cuser})
+    ids = request.user.id
+    com_name = companyUser.objects.only('companyname').get(
+        username=request.user.username).companyname
+    id = companyUser.objects.only('id').get(username=request.user.username).id
+    pObj = placementInfo.placement_by_id(id)
+    return render(request, 'complacement.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj})
 
 
 def cominternship(request):
-    return render(request, 'cominternship.html', {'suser': suser, 'cuser': cuser})
+    ids = request.user.id
+    com_name = companyUser.objects.only('companyname').get(
+        username=request.user.username).companyname
+    id = companyUser.objects.only('id').get(username=request.user.username).id
+    iObj = internshipInfo.internship_by_id(id)
+    return render(request, 'cominternship.html', {'suser': suser, 'cuser': cuser, 'iObj': iObj})
 
 
 def comall(request):
@@ -56,6 +69,6 @@ def comall(request):
     com_name = companyUser.objects.only('companyname').get(
         username=request.user.username).companyname
     id = companyUser.objects.only('id').get(username=request.user.username).id
-    pObj = placementInfo.placement_by_id(id)
     iObj = internshipInfo.internship_by_id(id)
+    pObj = placementInfo.placement_by_id(id)
     return render(request, 'comall.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj, 'com_name': com_name})
