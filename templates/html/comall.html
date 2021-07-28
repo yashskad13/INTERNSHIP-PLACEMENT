@@ -14,32 +14,34 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="{% static 'css/studashboard.css' %}" />
     <title>VIT | Placement Cell</title>
     <!-- <script src="index.js"></script> -->
   </head>
   <body>
     {% block content %}
-    <div class="item">
-      {% for i in iObj %}
-      <div class="wrapper-all">
-        <div class="image-field">
-          <div class="com-img">
-            <img src="" alt="Company Image" />
-          </div>
-          <div class="com-info">
-            <h1>{{com_name}}</h1>
-            <p>{{i.domain}}</p>
-          </div>
-          <div class="card-type">
-            <p>INTERNSHIP</p>
-          </div>
+    <!-- <div class="all-item"> -->
+    {% for i in iObj %}
+    <div class="wrapper">
+      <div class="image-field">
+        <div class="com-img">
+          <img src="" alt="Company Image" />
+        </div>
+        <div class="com-info">
+          <h1>{{com_name}}</h1>
+          <p>{{i.domain}}</p>
+        </div>
+        <div class="card-type">
+          <p>INTERNSHIP</p>
         </div>
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
+    <!-- </div> -->
     {% endblock %}
   </body>
 </html>
+
 <!-- {% for p in pObj %} {{p.company_username}} {{p.package}} {{p.domain}}
       {{p.cgpa_req}} {{p.backlog}} {{p.company_email}} {{p.company_phone}}
       {{p.company_website}} {{p.regform_link}} {{p.status}}
