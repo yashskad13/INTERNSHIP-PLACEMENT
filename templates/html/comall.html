@@ -21,7 +21,7 @@
   <body>
     {% block content %}
     <div class="all-item">
-      {% for i in iObj %} {% if i.status %}
+      {% for i in iObj %}
       <div class="com-group">
         <div class="image-field">
           <div class="com-img">
@@ -35,35 +35,42 @@
             <p>INTERNSHIP</p>
           </div>
         </div>
-        <p>
-          This is in the white spceed Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
-          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
-          deserunt, nemo eveniet est!
-        </p>
-      </div>
-      {% endif %} {% endfor %} {% for p in pObj %} {% if p.status %}
-      <div class="com-group">
-        <div class="image-field">
-          <div class="com-img">
-            <img src="{{ p.comimg.url }}" alt="Company Image" />
+        <div class="intern-details">
+          <div class="int-info">
+            <div class="int-h2-info">
+              <p>Stipend</p>
+              <strong>₹ {{ i.stipend }}</strong>
+              <p>Cgpa required</p>
+              <strong>{{ i.cgpa_req }}</strong>
+              <p>Mode of Work</p>
+              <strong>{{ i.modeofwork }}</strong>
+              <p>Work Duration</p>
+              <strong>{{ i.workduration }}</strong>
+            </div>
+            <div class="int-h2-info">
+              <p>Email</p>
+              <strong>{{ i.company_email }}</strong>
+              <p>Phone</p>
+              <strong>{{ i.company_phone }}</strong>
+              <p>Website</p>
+              <a href="{{ i.company_website }}" target="_blank"
+                ><strong>{{ i.company_website }}</strong></a
+              >
+              {% if i.status %}
+              <p>Application : <b>Approved</b></p>
+              {% else %}
+              <p>Application : <b>Not Approved</b></p>
+              {% endif %}
+            </div>
           </div>
-          <div class="com-info">
-            <h1>{{com_name}}</h1>
-            <p>{{p.domain}}</p>
-          </div>
-          <div class="card-type">
-            <p>PLACEMENT</p>
+          <div class="int-link">
+            <p align="center">
+              <a href="#" target="_blank">{{ i.regform_link }}</a>
+            </p>
           </div>
         </div>
-        <p>
-          This is in the white spceed Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
-          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
-          deserunt, nemo eveniet est!
-        </p>
       </div>
-      {% endif %} {% endfor %}
+      {% endfor %}
     </div>
     {% endblock %}
   </body>
@@ -81,3 +88,20 @@
       {{i.company_phone}} {{i.company_website}} {{i.regform_link}} {{i.status}}
       <img src="{{ i.comimg.url }}" alt="Company Image" />
       {% endfor%} -->
+
+<!-- {% for p in pObj %} {% if p.status %}
+      <div class="com-group">
+        <div class="image-field">
+          <div class="com-img">
+            <img src="{{ p.comimg.url }}" alt="Company Image" />
+          </div>
+          <div class="com-info">
+            <h1>{{com_name}}</h1>
+            <p>{{p.domain}}</p>
+          </div>
+          <div class="card-type">
+            <p>PLACEMENT</p>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% endfor %} -->

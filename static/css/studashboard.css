@@ -605,7 +605,7 @@ tr td:last-child {
   position: absolute;
   top: 20%;
   left: 37%;
-  width: 100%;
+  width: calc(100% - 37%);
   height: 100%;
 }
 
@@ -621,8 +621,8 @@ tr td:last-child {
 }
 
 .com-group {
-  width: 50%;
-  height: 45%;
+  width: 72%;
+  height: 53%;
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.4);
   border-radius: 1.1em;
   margin-bottom: 3em;
@@ -659,4 +659,26 @@ tr td:last-child {
   color: #fff;
   bottom: 1.5em;
   right: 1.5em;
+}
+
+.intern-details {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.int-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.int-h2-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.int-info p {
+  font-size: 1.5em;
+  color: #0d2c44;
+  font-weight: 400;
+  margin-top: 10px;
 }
