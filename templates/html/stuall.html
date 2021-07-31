@@ -31,10 +31,7 @@
       <div class="com-group">
         <div class="image-field">
           <div class="com-img">
-            <img
-              src="{{i.comimg.url}}"
-              alt="Company Image"
-            />
+            <img src="{{ i.comimg.url }}" alt="Company Image" />
           </div>
           <div class="com-info">
             <h1>{{i.company_name}}</h1>
@@ -44,21 +41,41 @@
             <p>INTERNSHIP</p>
           </div>
         </div>
-        <p>
-          This is in the white spceed Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
-          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
-          deserunt, nemo eveniet est!
-        </p>
+        <div class="intern-details">
+          <div class="int-info">
+            <div class="int-h2-info">
+              <p>Stipend</p>
+              <strong>₹ {{ i.stipend }}</strong>
+              <p>Cgpa required</p>
+              <strong>{{ i.cgpa_req }}</strong>
+              <p>Mode of Work</p>
+              <strong>{{ i.modeofwork }}</strong>
+              <p>Work Duration</p>
+              <strong>{{ i.workduration }}</strong>
+            </div>
+            <div class="int-h2-info">
+              <p>Email</p>
+              <strong>{{ i.company_email }}</strong>
+              <p>Phone</p>
+              <strong>{{ i.company_phone }}</strong>
+              <p>Website</p>
+              <a href="{{ i.company_website }}" target="_blank"
+                ><strong>{{ i.company_website }}</strong></a
+              >
+            </div>
+          </div>
+          <div class="int-link">
+            <p align="center">
+              <a href="#" target="_blank">{{ i.regform_link }}</a>
+            </p>
+          </div>
+        </div>
       </div>
       {% endif %} {% endfor %} {% for p in pObj %} {% if p.status %}
       <div class="com-group">
         <div class="image-field">
           <div class="com-img">
-            <img
-              src="{{p.comimg.url}}"
-              alt="Company Image"
-            />
+            <img src="{{ p.comimg.url }}" alt="Company Image" />
           </div>
           <div class="com-info">
             <h1>{{p.company_name}}</h1>
@@ -68,12 +85,33 @@
             <p>PLACEMENT</p>
           </div>
         </div>
-        <p>
-          This is in the white spceed Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Qui ea iste eum? Tenetur molestiae harum nulla iusto
-          beatae alias eum obcaecati vero tempore magnam, commodi quisquam
-          deserunt, nemo eveniet est!
-        </p>
+        <div class="intern-details">
+          <div class="int-info">
+            <div class="int-h2-info">
+              <p>Package</p>
+              <strong>₹ {{ p.package }}</strong>
+              <p>Cgpa required</p>
+              <strong>{{ p.cgpa_req }}</strong>
+              <p>Backlog</p>
+              <strong>{{ p.backlog }}</strong>
+            </div>
+            <div class="int-h2-info">
+              <p>Email</p>
+              <strong>{{ p.company_email }}</strong>
+              <p>Phone</p>
+              <strong>{{ p.company_phone }}</strong>
+              <p>Website</p>
+              <a href="{{ p.company_website }}" target="_blank"
+                ><strong>{{ p.company_website }}</strong></a
+              >
+            </div>
+          </div>
+          <div class="int-link">
+            <p align="center" style="margin-top: 10px">
+              <a href="#" target="_blank">{{ p.regform_link }}</a>
+            </p>
+          </div>
+        </div>
       </div>
       {% endif %} {% endfor %}
     </div>

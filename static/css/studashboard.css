@@ -212,7 +212,10 @@ main {
   margin-top: 3.5rem;
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: 65% auto;
+  grid-template-columns: 100%;
+}
+.projects {
+  width: 100%;
 }
 
 .card {
@@ -622,10 +625,10 @@ tr td:last-child {
 
 .com-group {
   width: 72%;
-  height: 53%;
+  height: 55%;
   box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.4);
   border-radius: 1.1em;
-  margin-bottom: 3em;
+  margin: 3em;
 }
 
 .com-img {
