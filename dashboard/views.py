@@ -39,7 +39,12 @@ def stuall(request):
 
 
 def comdashboard(request):
-    return render(request, 'comdashboard.html', {'suser': suser, 'cuser': cuser})
+    com_name = companyUser.objects.only('companyname').get(
+        username=request.user.username).companyname
+    id = companyUser.objects.only('id').get(username=request.user.username).id
+    iObj = internshipInfo.internship_by_id(id)
+    pObj = placementInfo.placement_by_id(id)
+    return render(request, 'comdashboard.html', {'suser': suser, 'cuser': cuser, 'pObj': pObj, 'iObj': iObj})
 
 
 def comprofile(request):

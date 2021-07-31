@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %}
+{% extends "base.html" %} {% load static %} {% load student %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,11 +40,21 @@
 
           <div class="card-single">
             <div>
-              <h1>79</h1>
+              <h1>{{ user|complacementcount:pObj }}</h1>
               <span>Placements</span>
             </div>
             <div>
               <span class="las la-clipboard-list"> </span>
+            </div>
+          </div>
+
+          <div class="card-single">
+            <div>
+              <h1>69k</h1>
+              <span>Not Approved</span>
+            </div>
+            <div>
+              <span class="las la-window-close"> </span>
             </div>
           </div>
 
@@ -57,27 +67,17 @@
               <span class="las la-check-circle"> </span>
             </div>
           </div>
-
-          <div class="card-single">
-            <div>
-              <h1>69k</h1>
-              <span>Rejected</span>
-            </div>
-            <div>
-              <span class="las la-window-close"> </span>
-            </div>
-          </div>
         </div>
 
         <div class="recent-grid">
           <div class="projects">
             <div class="card">
               <div class="card-header">
-                <h3>Recent Projects</h3>
+                <h3>Applications</h3>
 
-                <button>
+                <a href="comall">
                   See all <span class="las la-arrow-right"> </span>
-                </button>
+                </a>
               </div>
 
               <div class="card-body">
@@ -85,118 +85,51 @@
                   <table width="100%">
                     <thead>
                       <tr>
-                        <td>Project Title</td>
-                        <td>Department</td>
+                        <td>Type</td>
+                        <td>Domain</td>
                         <td>Status</td>
                       </tr>
                     </thead>
                     <tbody>
+                      {% for i in iObj %}
                       <tr>
-                        <td>UI/UX Design</td>
-                        <td>UI Team</td>
+                        <td>Internship</td>
+                        <td>{{i.domain}}</td>
+                        {% if i.status %}
                         <td>
-                          <span class="status purple"></span>
-                          review
+                          <span class="status green"></span>
+                          Approved
                         </td>
+                        {% else %}
+                        <td>
+                          <span class="status red"></span>
+                          Not Approved
+                        </td>
+                        {% endif %}
                       </tr>
+                      {% endfor %} {% for p in pObj %}
                       <tr>
-                        <td>Web Development</td>
-                        <td>Frontend</td>
+                        <td>Placement</td>
+                        <td>{{p.domain}}</td>
+                        {% if p.status %}
                         <td>
-                          <span class="status pink"></span>
-                          in progress
+                          <span class="status green"></span>
+                          Approved
                         </td>
-                      </tr>
-                      <tr>
-                        <td>Ushop app</td>
-                        <td>Mobile Team</td>
+                        {% else %}
                         <td>
-                          <span class="status orange"></span>
-                          pending
+                          <span class="status red"></span>
+                          Not Approved
                         </td>
+                        {% endif %}
                       </tr>
+                      {% endfor %}
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
-
-          {% comment %}
-          <div class="customers">
-            <div class="card">
-              <div class="card-header">
-                <h3>New Customer</h3>
-
-                <button>
-                  See all <span class="las la-arrow-right"> </span>
-                </button>
-              </div>
-
-              <div class="card-body">
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-
-                <div class="customer">
-                  <div class="info">
-                    <img src="" width="40px" height="40px" alt="" />
-                    <div>
-                      <h4>Lewis S. Cunningham</h4>
-                      <small>CEO Excerpt</small>
-                    </div>
-                  </div>
-                  <div class="contact">
-                    <span class="las la-user-circle"></span>
-                    <span class="las la-comment"></span>
-                    <span class="las la-phone"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endcomment %}
         </div>
       </main>
     </div>

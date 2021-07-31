@@ -234,7 +234,7 @@ main {
   border-bottom: 1px solid #f0f0f0;
 }
 
-.card-header button {
+.card-header a {
   background: var(--main-color);
   border-radius: 10px;
   color: #fff;
@@ -275,16 +275,12 @@ tr td:last-child {
   align-items: center;
 }
 
-.status.purple {
-  background: rebeccapurple;
+.status.green {
+  background: green;
 }
 
-.status.pink {
-  background: deeppink;
-}
-
-.status.orange {
-  background: orangered;
+.status.red {
+  background: red;
 }
 
 .table-responsive {

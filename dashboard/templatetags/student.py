@@ -1,3 +1,5 @@
+
+
 from django import template
 
 register = template.Library()
@@ -73,3 +75,7 @@ def complacement(email, pinfo):
         if(email == p.company_email):
             print("Hi")
             return p
+
+@register.filter(name="complacementcount")
+def complacementcount(user, pObj):
+    return len(pObj)
